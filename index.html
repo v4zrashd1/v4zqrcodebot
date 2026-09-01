@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🟢 QRCodebot — Super QR Bot & Tools</title>
+  <style>
+    :root{--bg1:#0f2027;--bg2:#203a43;--bg3:#2c5364;--acc:#12a637;--acc2:#0b509e;--txt:#e2e8f0;--muted:#94a3b8}
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));color:var(--txt);min-height:100vh}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px}
+    header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .logo{font-size:24px;font-weight:800;letter-spacing:-.5px}
+    .logo span{color:var(--acc)}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:15px}
+    nav a:hover{color:#fff}
+    .hero{text-align:center;padding:56px 16px 30px}
+    .hero h1{font-size:38px;margin-bottom:14px;line-height:1.25}
+    .hero h1 b{background:linear-gradient(90deg,#12a637,#22d3ee);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:var(--muted);font-size:17px;max-width:640px;margin:0 auto;line-height:1.6}
+    .cta{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:15px;transition:.3s;border:none;cursor:pointer}
+    .btn-primary{background:linear-gradient(90deg,var(--acc),#22d3ee);color:#06281b}
+    .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(18,166,55,.35)}
+    .panel{background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:28px;margin:24px 0}
+    .panel h2{font-size:22px;margin-bottom:16px;color:#fff}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+    .tool-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px}
+    .tool-card h3{font-size:17px;margin-bottom:8px}
+    .tool-card p{color:var(--muted);font-size:14px;line-height:1.5}
+    .tool-card .icon{font-size:34px;margin-bottom:10px}
+    label{display:block;color:var(--muted);font-size:13px;margin:14px 0 6px}
+    input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:15px;outline:none}
+    input:focus,textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(18,166,55,.2)}
+    .result{margin-top:16px;text-align:center;min-height:40px}
+    .result img{max-width:240px;border-radius:10px;background:#fff;padding:8px}
+    .qrbox{background:#fff;display:inline-block;border-radius:10px;padding:10px;margin-top:10px}
+    .features li{margin:10px 0;list-style:none;display:flex;gap:10px;align-items:center}
+    .features li::before{content:"✓";color:var(--acc);font-weight:900}
+    .steps{counter-reset:step}
+    .steps li{counter-increment:step;margin:12px 0 12px 0;list-style:none;padding-left:44px;position:relative;color:var(--muted)}
+    .steps li::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;background:var(--acc2);border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+    footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 20px;border-top:1px solid rgba(255,255,255,.08);margin-top:30px}
+    .badge{display:inline-block;background:rgba(18,166,55,.2);color:#4ade80;padding:4px 12px;border-radius:20px;font-size:12px;margin-top:6px}
+    .hide{display:none}
+    @media(max-width:600px){.hero h1{font-size:27px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">🟢 QR<span>Code</span>bot</div>
+    <nav>
+      <a href="#tools">টুলস</a>
+      <a href="#how">ব্যবহার</a>
+      <a href="#features">ফিচার</a>
+      <a href="https://t.me/v4zqrcodebot" target="_blank">🤖 বট</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>সুপার <b>QR Bot</b> &amp; QR Tools</h1>
+    <p>২৫+ টুল, QR তৈরি, QR স্ক্যান, আবহাওয়া, হ্যাশ, বাইনারি এবং আরও অনেক কিছু — সব একটি Telegram বটে @v4zqrcodebot</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://t.me/v4zqrcodebot" target="_blank">🤖 কাজ শুরু করুন</a>
+      <a class="btn btn-outline" href="#tools">🔳 QR বানান</a>
+    </div>
+    <div><span class="badge">✅ অনলাইন • ২৪/৭</span></div>
+  </div>
+
+  <!-- QR Generator -->
+  <div class="panel" id="tools">
+    <h2>🔳 অনলাইন QR জেনারেটর</h2>
+    <p style="color:var(--muted);margin-bottom:6px">যেকোনো টেক্সট/লিংক লিখুন — স্টাইলড QR তৈরি হবে (Rashd QR API)</p>
+    <label for="msg">মেসেজ / লিংক</label>
+    <input type="text" id="msg" placeholder="যেমন: https://t.me/v4zqrcodebot">
+    <div class="cta" style="justify-content:flex-start;margin-top:16px">
+      <button class="btn btn-primary" onclick="genQR()">✨ QR তৈরি করুন</button>
+    </div>
+    <div class="result" id="qresult"></div>
+  </div>
+
+  <!-- Tools grid -->
+  <div class="panel">
+    <h2>🛠️ ২৫+ টুল (বটে)</h2>
+    <div class="grid">
+      <div class="tool-card"><div class="icon">📷</div><h3>QR স্ক্যান</h3><p>ছবি পাঠান, ভেতরের টেক্সট/লিংক বের করে দেবে</p></div>
+      <div class="tool-card"><div class="icon">🔳</div><h3>QR তৈরি</h3><p>টেক্সট বা লিংক → সুন্দর QR</p></div>
+      <div class="tool-card"><div class="icon">📊</div><h3>বারকোড</h3><p>যেকোনো টেক্সটের বারকোড</p></div>
+      <div class="tool-card"><div class="icon">🔑</div><h3>পাসওয়ার্ড</h3><p>শক্তিশালী র্যান্ডম পাসওয়ার্ড</p></div>
+      <div class="tool-card"><div class="icon">🌦️</div><h3>আবহাওয়া</h3><p>রিয়েল-টাইম আবহাওয়া (শহর দিলেই)</p></div>
+      <div class="tool-card"><div class="icon">📶</div><h3>IP লুকআপ</h3><p>যেকোনো IP-র তথ্য</p></div>
+      <div class="tool-card"><div class="icon">🔒</div><h3>হ্যাশ</h3><p>MD5 / SHA1 / SHA256 / SHA512</p></div>
+      <div class="tool-card"><div class="icon">💻</div><h3>বাইনারি</h3><p>টেক্সট ↔ বাইনারি</p></div>
+      <div class="tool-card"><div class="icon">🔐</div><h3>Base64</h3><p>এনকোড / ডিকোড</p></div>
+      <div class="tool-card"><div class="icon">📋</div><h3>JSON</h3><p>JSON ফরম্যাট / ভ্যালিডেট</p></div>
+      <div class="tool-card"><div class="icon">🎨</div><h3>কালার</h3><p>HEX অপশন</p></div>
+      <div class="tool-card"><div class="icon">➕</div><h3>আরও অনেক</h3><p>রিভার্স, কাউন্টার, Lorem, URL Enc/Dec...</p></div>
+    </div>
+  </div>
+
+  <!-- How to use -->
+  <div class="panel" id="how">
+    <h2>📘 কীভাবে ব্যবহার করবেন?</h2>
+    <ol class="steps" style="counter-reset:step">
+      <li>Telegram-এ <b>@v4zqrcodebot</b> খুলুন (বা উপরের বাটন)</li>
+      <li>/start চাপুন — টুল মেনু দেখতে পাবেন</li>
+      <li>টুল সিলেক্ট করে রিকোয়েস্ট অনুযায়ী তথ্য দিন</li>
+      <li>QR নাম্বার স্ক্যান করতে কেবল ছবি পাঠান!</li>
+    </ol>
+  </div>
+
+  <!-- Features -->
+  <div class="panel" id="features">
+    <h2>✨ ফিচার</h2>
+    <ul class="features">
+      <li>QR কোড তৈরি ও স্ক্যান — ৩-লেয়ার রোবাস্ট ডিকোডার</li>
+      <li>স্টাইলড QR (Rashd QR API)</li>
+      <li>রিয়েল-টাইম আবহাওয়া</li>
+      <li>২৫+ টুল সম্পূর্ণ ফ্রি</li>
+      <li>সব সময় অনলাইন (Railway হোস্টেড)</li>
+    </ul>
+  </div>
+
+  <footer>
+    ⚡ Powered by <b>Rashd</b> • QRCodebot v2.1 • © 2026<br>
+    <span style="opacity:.7">বট টোকেন এই সাইটে সংরক্ষিত নয়</span>
+  </footer>
+</div>
+
+<script>
+async function genQR(){
+  const msg = document.getElementById('msg').value.trim();
+  const res = document.getElementById('qresult');
+  if(!msg){ res.innerHTML='<p style="color:#f87171">❌ মেসেজ লিখুন</p>'; return; }
+  res.innerHTML='<p style="color:var(--muted)">⏳ বানানো হচ্ছে...</p>';
+  try{
+    const api = await fetch('https://rashd-api.up.railway.app/?api=qr&message='+encodeURIComponent(msg));
+    const data = await api.json();
+    if(data.status && data.imageUrl){
+      res.innerHTML = '<div class="qrbox"><img src="'+data.imageUrl+'" alt="QR"></div>'
+        +'<p style="color:#4ade80;margin-top:10px">✅ QR তৈরি!</p>'
+        +'<p style="color:var(--muted);font-size:12px">'+data.message+'</p>';
+    } else {
+      res.innerHTML='<p style="color:#f87171">❌ '+ (data.error||'QR API error') +'</p>';
+    }
+  }catch(e){
+    res.innerHTML='<p style="color:#f87171">❌ API error: '+e.message+'</p>';
+  }
+}
+</script>
+</body>
+</html>
