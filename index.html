@@ -136,12 +136,26 @@ async function genQR(){
   if(!msg){ res.innerHTML='<p style="color:#f87171">❌ মেসেজ লিখুন</p>'; return; }
   res.innerHTML='<p style="color:var(--muted)">⏳ বানানো হচ্ছে...</p>';
   try{
-    const api = await fetch('https://rashd-api.up.railway.app/?api=qr&message='+encodeURIComponent(msg));
-    const data = await api.json();
-    if(data.status && data.imageUrl){
-      res.innerHTML = '<div class="qrbox"><img src="'+data.imageUrl+'" alt="QR"></div>'
+    const resp = await fetch('https://api.qrcode-monkey.com/qr/custom', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        data: msg,
+        config:{
+          body:'square', eye:'frame13', eyeBall:'ball14',
+          bodyColor:'#000000', bgColor:'#FFFFFF',
+          gradientType:'linear'
+        },
+        size:1000, download:'imageUrl', file:'png'
+      })
+    });
+    const data = await resp.json();
+    let url = data.imageUrl;
+    if(url && !url.startsWith('https')) url = 'https:'+url;
+    if(url){
+      res.innerHTML = '<div class="qrbox"><img src="'+url+'" alt="QR"></div>'
         +'<p style="color:#4ade80;margin-top:10px">✅ QR তৈরি!</p>'
-        +'<p style="color:var(--muted);font-size:12px">'+data.message+'</p>';
+        +'<p style="color:var(--muted);font-size:12px">'+msg+'</p>';
     } else {
       res.innerHTML='<p style="color:#f87171">❌ '+ (data.error||'QR API error') +'</p>';
     }
